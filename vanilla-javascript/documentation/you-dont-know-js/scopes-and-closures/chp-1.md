@@ -1,21 +1,31 @@
 # What is Scope?
+
 How does javascript knows which variables are accessible by any given statement
 and how does it handle two variables of the same name?
 The answer to questions like these are explained with the help of well defined rules called scope.
+
 ---
+
 #### How JS engine process our program before it runs?
 Javascript is classified as an **interpreted language** making most of us assumed that JS program are processed in a single, top-down pass.
 But JS is parsed/compiled in a separate phase **before execution begins**.
+
 ---
+
 Javascript functions are first class values. They can be assigned and parsed like numbers or strings.
 But since this function holds and access variable they maintain their **original scope**, no matter where in the program the function are eventually executed.
 This is called **Closure**.
+
 ---
+
 #### Compiled Vs Interpreted
+
 Code compilation is a set of steps that process the text of your code and turn it into a list of instructions that computer can understand. Over here, whole source code is transformed all at once and those resulting instructions are saved as output that can be later executed.
 Interpretation is same as compilation where it transforms your program into machine-understandable instructions. But the processing model is different. Unlike a program being **compiled all at once**, with interpretation the source code is **tranformed line by line** or statement is executed before immediately proceeding to processing the next line of the source code.
+
 ---
-Program is processed by a compiler in three basic stages:
+
+#### Program is processed by a compiler in three basic stages:
 1. Tokenizing/Lexing: breaking up strings of character into meaningful chunks, called tokens. For Eg: `var a = 2;` will be broken into `var`, `a`, `=`, `2` and `;`
 2. Parsing: Taking stream of array of tokens and turning it into tree of nested elements which collectively represents the grammatical structure of the program. This is called an Abstract Syntax Tree(AST). For Eg: the tree for `var a = 2` will start from top level node called `VariableDeclaration` with child node called `Identifier`(whose value is a), and another child called `AssignmentExpression` which itself has a child called `NumericLiteral`(whose value is 2).
 3. Code Generation: Taking AST and turning it into executable code. This part varies greatly depending on the language, the platform it's targeting, and other factors.
